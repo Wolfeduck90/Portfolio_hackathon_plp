@@ -12,13 +12,43 @@ body {
 }
 
 /* Header Styling */
-header {
-    background: rgba(0, 0, 0); /* Deep Blue for Authority and Trust */
-    color: rgb(0, 255, 230);
-    text-align: center;
-    padding: 2rem;
-    text-shadow: 0 0 15px #00bfff; /* Neon Effect */
+
+#main-header {
+    background-image: url('agritech\ AI\ with\ a\ black\ background\ and\ blue\ highlights.png'); /* Replace with your image file */
+    background-size: cover; /* Ensures the image covers the entire header */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    position: relative;
+	color: #ffffff;
+    text-align: center; /* Centers the title text */
+    padding: 4rem 1rem; /* Adds space inside the header for text placement */
+    font-family: 'Courier New', Courier, monospace; /* Font for the title */
+	text-shadow: 
+        0 0 10px #26ff00,  /* Bright inner neon green */
+        0 0 20px #00ffff,  /* Blue glow for dimension */
+        0 0 30px #03fc88,  /* Soft green glow for depth */
+        0 0 40px #03fc88,  /* Additional outer green glow */
+        0 0 50px #00ffff;  /* Outermost blue glow for emphasis */
 }
+
+#main-header::before {
+    content: ''; /* Empty element for the overlay */
+    position: absolute; /* Positions overlay over the header */
+    top: 0;
+    left: 0;
+    width: 100%; /* Matches header width */
+    height: 100%; /* Matches header height */
+    background-color: rgba(0, 21, 70, 0.6); /* Black overlay with 50% transparency */
+    z-index: 1; /* Ensures overlay sits behind the text */
+}
+
+/* Styling for the Title */
+#main-header h1 {
+    position: relative; /* Ensures title sits above the overlay */
+    z-index: 2; /* Places the text above the overlay */
+    font-size: 2.5rem;
+}
+
 
 header h1 {
     font-size: 2.5rem;
@@ -28,7 +58,7 @@ header h1 {
 	/* Floating Right-Side Navigation Menu */
 #side-nav {
     position: fixed; /* Fixes the nav bar to the screen while scrolling */
-    top: 20%; /* Adjusts vertical placement */
+    top: 25%; /* Adjusts vertical placement */
     right: 0; /* Positions the menu on the right side */
     width: 200px; /* Set a fixed width for the menu */
     background: rgba(255, 255, 255, 0.3)33; /* Neutral dark background */
@@ -52,9 +82,11 @@ header h1 {
     display: block;
     padding: 1rem;
     text-decoration: none;
-    color: white; /* Links inside the nav menu */
+    color: #00ffff; /* Links inside the nav menu */
     text-align: center; /* Center-aligns the text */
-    border-bottom: 1px solid #555; /* Adds separation between links */
+    border-bottom: 1px solid #555; 
+	border-top: 1px solid #555;/* Adds separation between links */
+	border-radius: 8px;
     transition: background-color 0.3s, color 0.3s; /* Smooth hover effect */
 }
 
@@ -94,15 +126,30 @@ section {
     background-color: #000000; /* Soft green for a natural vibe */
     border: 2px dashed #4CAF50; /* Green border to match the theme */
 }
-/* Media Query for Smaller Screens */
-@media (max-width: 50px) {
+
+/* Flexbox Container for Image and Text Alignment */
+.about-container {
+    display: flex; /* Aligns image and text horizontally */
+    align-items: center; /* Vertically centers the items */
+    gap: 1rem; /* Adds space between image and text */
+}
+
+/* Image Styling */
+.about-image {
+    max-width: 150px; /* Restricts image width */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 8px; /* Optional: Adds rounded edges to the image */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+}
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
     .about-container {
-        flex-direction: column; /* Stacks image and text vertically */
+        flex-direction: column; /* Stacks image above text */
         align-items: center; /* Centers content */
     }
 
     .about-image {
-        width: 50px; /* Adjust image size for smaller screens */
+        width: 100px; /* Reduces image size for smaller screens */
     }
 }
 /* Education Section Styling */
@@ -131,7 +178,7 @@ section {
 
 /* Heading Styling for Sections */
 section h2 {
-    color: #2698ac; /* Consistent deep blue for all headings */
+    color: #00ffff; /* Consistent deep blue for all headings */
     border-bottom: 2px solid currentColor; /* Aligns the heading with its section color */
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
@@ -153,11 +200,10 @@ form button {
     color: white;
     border: none;
     cursor: pointer;
-    transition: background 0.3s;
 }
 
 form button:hover {
-    background: #00e676;
+    background: #00ffff;
 }
 
 /* Responsive Design */
